@@ -8,29 +8,33 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
-from random import randrange
 from turtle import *
-
+from random import randrange
 from freegames import square, vector
+import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+colores = ['black','orange', 'purple', 'green','blue','gray']
+ran = random.choice(colores)
+colorComida = ran
+colores.remove(ran)
+colorSerpiente = random.choice(colores)
 
 def change(x, y):
-    """Change snake direction."""
+    "Change snake direction."
     aim.x = x
     aim.y = y
 
-
 def inside(head):
-    """Return True if head inside boundaries."""
+    "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
-
 def move():
-    """Move snake forward one segment."""
+    global food
+    "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
 
@@ -51,12 +55,16 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, colorSerpiente)
 
-    square(food.x, food.y, 9, 'green')
+    coordenada = [vector(10, 0), vector(-10, 0), vector(0, -10), vector(0, 10)]
+    posicion = random.choice(coordenada)
+    if randrange(10) == 0:
+        if inside(food + posicion):
+            food += posicion
+    square(food.x, food.y, 9, colorComida)
     update()
-    ontimer(move, 100)
-
+    ontimer(move, 60)
 
 setup(420, 420, 370, 0)
 hideturtle()
