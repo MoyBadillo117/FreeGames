@@ -34,10 +34,13 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
-    #t = Turtle()
-    #t.circle(100)
-    pass  # TODO
+def circulo(start, end):
+    penup()
+    goto(start.x, start.y)
+    pendown()
+    begin_fill()
+    circle((end.x - start.x)/2) #El diametro es tamaño de la distancia ingresada
+    end_fill()
 
 
 def rectangle(start, end):
@@ -64,6 +67,7 @@ def triangle(start, end):
     for count in range(2):
         forward(end.x - start.x)
         left(random.randint(90,180))
+        #left(90)
     end_fill()
   
 
@@ -98,7 +102,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circulo), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
