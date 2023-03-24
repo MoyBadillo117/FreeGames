@@ -10,30 +10,26 @@ Exercises
 
 from random import randrange
 from turtle import *
-
 from freegames import vector
 
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
-
 def tap(x, y):
-    """Respond to screen tap."""
+    "Respond to screen tap."
     if not inside(ball):
         ball.x = -199
         ball.y = -199
         speed.x = (x + 200) / 25
         speed.y = (y + 200) / 25
 
-
 def inside(xy):
-    """Return True if xy within screen."""
+    "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
-
 def draw():
-    """Draw ball and targets."""
+    "Draw ball and targets."
     clear()
 
     for target in targets:
@@ -46,9 +42,8 @@ def draw():
 
     update()
 
-
 def move():
-    """Move ball and targets."""
+    "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
@@ -74,8 +69,7 @@ def move():
         if not inside(target):
             return
 
-    ontimer(move, 50)
-
+    ontimer(move, 5)
 
 setup(420, 420, 370, 0)
 hideturtle()
