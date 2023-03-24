@@ -66,8 +66,10 @@ def move():
     draw()
 
     for target in targets:
-        if not inside(target):
-            return
+        if target.x<-200:
+            target.x=200
+            target.y=randrange(-150,150)
+            
 
     ontimer(move, 5)
 
