@@ -7,6 +7,9 @@ Exercises:
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
+
+ Brandon Saavedra Cortes a01748300
+ Moises Badillo Cruz a00834306
 """
 
 from random import *
@@ -50,7 +53,7 @@ def tap(x, y):
         global contaps
         contaps +=1
         print(contaps)
-        #write(contaps, font=('Arial', 30, 'normal'))
+        #write(contaps, font=('Arial', 30, 'normal')) #Se elimina codigó innecesario que afecta el desarrollo
     else:
         hide[spot] = False
         hide[mark] = False
