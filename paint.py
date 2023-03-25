@@ -6,6 +6,8 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
+# Brandon Saavedra Cortes a01748300
+#Moises Badillo Cruz a00834306
 
 from turtle import *
 import random
@@ -13,7 +15,7 @@ from freegames import vector
 
 
 def line(start, end):
-    """Draw line from start to end."""
+    """Dibujo linea de inicio y de fin para la figura."""
     up()
     goto(start.x, start.y)
     down()
@@ -57,7 +59,7 @@ def rectangle(start, end):
         left(90)
     end_fill()
 
-
+#Se crea el triangulo
 def triangle(start, end):
     up()
     goto(start.x, start.y)
@@ -83,7 +85,7 @@ def tap(x, y):
         end = vector(x, y)
         shape(start, end)
         state['start'] = None
-
+#
 
 def store(key, value):
     """Store value in state at key."""

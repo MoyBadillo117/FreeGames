@@ -7,6 +7,9 @@ Exercises:
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
+
+ Brandon Saavedra Cortes a01748300
+ Moises Badillo Cruz a00834306
 """
 #Moisés Arturo Badillo Álvarez (A00834306)
 #Brandon Kevin Saavedra Cortés (A01748300)
@@ -51,8 +54,9 @@ def tap(x, y):
         state['mark'] = spot
         global contaps 
         contaps +=1 #Cada vez que se hace tap se agrega al contador
-        print(contaps) #Se imprime en consola el número de taps
-        
+        print(contaps) #Se imprime en consola el número de taps 
+        #write(contaps, font=('Arial', 30, 'normal')) #Se elimina codigó innecesario que afecta el desarrollo
+
     else:
         hide[spot] = False
         hide[mark] = False

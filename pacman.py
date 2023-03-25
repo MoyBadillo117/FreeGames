@@ -7,6 +7,8 @@ Exercises
 3. Change where pacman starts.
 4. Make the ghosts faster/slower.
 5. Make the ghosts smarter.
+ Brandon Saavedra Cortes a01748300
+ Moises Badillo Cruz a00834306
 """
 
 from random import choice
@@ -121,7 +123,7 @@ def move():
     up()
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
-
+# el movimiento de los fantasmas al perseegui se hace más lento
     for point, course in ghosts:
         if valid(point + course):
             point.move(course)
@@ -180,10 +182,11 @@ def move():
         if abs(pacman - point) < 20:
             return
 
+#se modifica un poco la inteligencia de los fantasmas por jugabilidad
     ontimer(move, 100)
 
 def change(x, y):
-    "Change pacman aim if valid."
+    "Se cambia el orden de los fantasmas de perseguir a huir"
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
