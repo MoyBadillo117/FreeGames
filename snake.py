@@ -8,6 +8,9 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+# Brandon Saavedra Cortes a01748300
+ Moises Badillo Cruz a00834306
+
 from turtle import *
 from random import randrange
 from freegames import square, vector
@@ -24,7 +27,7 @@ colores.remove(ran)
 colorSerpiente = random.choice(colores)
 
 def change(x, y):
-    "Change snake direction."
+# Cambio en el movimiento de la serpiente
     aim.x = x
     aim.y = y
 
@@ -34,7 +37,7 @@ def inside(head):
 
 def move():
     global food
-    "Move snake forward one segment."
+#se desplaza una casilla o un espacio dentro del tablero o area de juego
     head = snake[-1].copy()
     head.move(aim)
 
@@ -44,7 +47,7 @@ def move():
         return
 
     snake.append(head)
-
+#Se cambia tamaño de la comida
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
@@ -65,7 +68,7 @@ def move():
     square(food.x, food.y, 9, colorComida)
     update()
     ontimer(move, 60)
-
+# se cambia aparición de la serpiente o Respawn
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
