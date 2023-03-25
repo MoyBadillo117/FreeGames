@@ -7,7 +7,8 @@ Exercises
 3. Apply gravity to the targets.
 4. Change the speed of the ball.
 
- Btandon Saavedra Cortes
+ Brandon Saavedra Cortes a01748300
+ Moises Badillo Cruz a00834306
 """
 
 from random import randrange
@@ -19,15 +20,15 @@ speed = vector(0, 0)
 targets = []
 
 def tap(x, y):
-    "Respond to screen tap."
+    "En esta línea de codigo se cambia la velocidad, va aumentando, pero disminuyo la respuesta de aumento para bajar dificultad"
     if not inside(ball):
-        ball.x = -199
-        ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        ball.x = -190
+        ball.y = -190
+        speed.x = (x + 150) / 20
+        speed.y = (y + 150) / 20
 
 def inside(xy):
-    "Return True if xy within screen."
+    "Return True if xy within screen." a
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 def draw():
@@ -48,7 +49,7 @@ def move():
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
-        target = vector(200, y)
+        target = vector(150, y) #se cambia tamaño de objeyivo para visual en pantalla
         targets.append(target)
 
     for target in targets:
